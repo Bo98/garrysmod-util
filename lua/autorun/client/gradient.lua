@@ -39,6 +39,7 @@ function draw.LinearGradient(x, y, w, h, stops, horizontal)
 	elseif #stops == 1 then
 		surface.SetDrawColor(stops[1].color)
 		surface.DrawRect(x, y, w, h)
+		return
 	end
 
 	table.SortByMember(stops, "offset", true)
