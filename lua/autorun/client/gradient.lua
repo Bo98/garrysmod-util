@@ -47,14 +47,14 @@ function draw.LinearGradient(x, y, w, h, stops, horizontal)
 	render.SetMaterial(mat_white)
 	mesh.Begin(MATERIAL_QUADS, #stops - 1)
 	for i = 1, #stops - 1 do
-		local offset1 = math.Clamp(stops[k].offset, 0, 1)
-		local offset2 = math.Clamp(stops[k + 1].offset, 0, 1)
+		local offset1 = math.Clamp(stops[i].offset, 0, 1)
+		local offset2 = math.Clamp(stops[i + 1].offset, 0, 1)
 		if offset1 == offset2 then continue end
 
 		local deltaX1, deltaY1, deltaX2, deltaY2
 
-		local color1 = stops[k].color
-		local color2 = stops[k + 1].color
+		local color1 = stops[i].color
+		local color2 = stops[i + 1].color
 
 		local r1, g1, b1, a1 = color1.r, color1.g, color1.b, color1.a
 		local r2, g2, b2, a2
